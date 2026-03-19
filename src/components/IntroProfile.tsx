@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import IntroScene from "./3d/IntroScene";
+import IntroScene from "@/components/3d/IntroScene";
 
 interface Props {
     onEnter: () => void;
@@ -18,7 +18,6 @@ export default function IntroProfile({ onEnter }: Props) {
                 fixed inset-0 z-[100]
                 flex items-center justify-center
                 bg-background
-                cursor-pointer
                 select-none"
         >
             <IntroScene />
@@ -57,7 +56,7 @@ export default function IntroProfile({ onEnter }: Props) {
 
                 {/* info */}
                 <div className="flex flex-wrap justify-center gap-6 text-sm font-mono text-muted-foreground">
-                    <span>rafiislamipasha27@email.com</span>
+                    <span>rafiislamipasha27@gmail.com</span>
                     <span>github.com/rafidhp</span>
                     {/* <a href="https://github.com/rafidhp" target="_blank" rel="noopener noreferrer">
                         github.com/rafidhp

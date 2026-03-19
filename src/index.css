@@ -5,6 +5,10 @@
 @tailwind components;
 @tailwind utilities;
 
+* body {
+  cursor: none;
+}
+
 @layer base {
   :root {
     --background: 230 50% 8%;

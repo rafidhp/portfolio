@@ -4,12 +4,15 @@ import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import IntroProfile from "@/components/IntroProfile";
 import IndexContent from "@/components/IndexContent";
+import DepthCursor from "@/components/DepthCursor";
 
 export default function Index() {
     const [entered, setEntered] = useState(false);
 
     return (
         <div className="relative min-h-screen bg-background overflow-hidden">
+            {/* cursor effect */}
+            <DepthCursor />
             {/* intro screen */}
             <AnimatePresence>
                 {!entered && (
