@@ -11,6 +11,7 @@ export function HeroSection() {
     const y = el.getBoundingClientRect().top + window.scrollY;
     window.scrollTo({ top: y, behavior: "smooth" });
   };
+  
   return (
     <section
       id="home"
@@ -79,7 +80,7 @@ export function HeroSection() {
           onClick={scrollNext}
           aria-label={t("hero.scroll")}
           tabIndex={-1}
-          className="flex float-soft absolute bottom-10 left-1/2 flex-col items-center gap-2 text-muted-foreground/80 hover:text-foreground hover:drop-shadow-[0_0_12px_hsl(var(--primary-glow)/0.55)] select-none outline-none focus:outline-none focus-visible:outline-none focus:ring-0 active:scale-100 active:bg-transparent bg-transparent border-0 p-2 [-webkit-tap-highlight-color:transparent]"
+          className="flex float-soft absolute bottom-10 left-1/2 flex-col items-center gap-2 text-muted-foreground/80 hover:text-foreground hover:drop-shadow-[0_0_12px_hsl(var(--primary-glow)/0.55)] select-none outline-none focus:outline-none focus-visible:outline-none focus:ring-0 active:scale-100 active:bg-transparent bg-transparent border-0 p-2 [-webkit-tap-highlight-color:transparent] hover:cursor-pointer"
           style={{ transition: "color 0.2s ease" }}
         >
           <span className="text-[10px] md:text-[11px] uppercase tracking-[0.2em]">
