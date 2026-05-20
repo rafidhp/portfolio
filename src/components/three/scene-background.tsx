@@ -1,5 +1,6 @@
 import { Canvas, useFrame } from "@react-three/fiber";
 import { useEffect, useMemo, useRef, Suspense } from "react";
+import { useIsMobile } from "@/hooks/use-mobile";
 import { useTheme } from "next-themes";
 import * as THREE from "three";
 
@@ -192,7 +193,7 @@ function makeMoonTexture() {
 }
 
 /* 🌙 Floating moon (night) — elegant, subtle */
-function Moon({ scrollRef }: { scrollRef: React.MutableRefObject<number> }) {
+function Moon({ scrollRef, isMobile }: { scrollRef: React.MutableRefObject<number>; isMobile: boolean }) {
   const groupRef = useRef<THREE.Group>(null);
   const moonRef = useRef<THREE.Mesh>(null);
   const haloRef = useRef<THREE.Mesh>(null);
@@ -201,10 +202,22 @@ function Moon({ scrollRef }: { scrollRef: React.MutableRefObject<number> }) {
   useFrame((state, delta) => {
     if (!groupRef.current) return;
     const t = state.clock.elapsedTime;
+    const baseScale = isMobile ? 0.62 : 0.85;
+    const breathe = 1 + Math.sin(t * 0.55) * 0.045;
+
+    groupRef.current.scale.lerp(
+      new THREE.Vector3(
+        baseScale * breathe,
+        baseScale * breathe,
+        baseScale * breathe,
+      ),
+      0.035,
+    );
+
     const s = scrollRef.current;
     groupRef.current.position.set(
-      3.4 + Math.sin(t * 0.12) * 0.06,
-      1.5 - s * 2.2 + Math.cos(t * 0.15) * 0.05,
+      isMobile ? 2.0 : 4,
+      (isMobile ? 2.7 : 1.9) - s * 2.2 + Math.cos(t * 0.15) * 0.05,
       -2.5,
     );
     if (moonRef.current) {
@@ -220,7 +233,7 @@ function Moon({ scrollRef }: { scrollRef: React.MutableRefObject<number> }) {
   });
 
   return (
-    <group ref={groupRef} scale={0.85}>
+    <group ref={groupRef}>
       {/* subtle halo — restrained, not glowing */}
       <mesh ref={haloRef}>
         <sphereGeometry args={[1.0, 32, 32]} />
@@ -255,7 +268,7 @@ function Moon({ scrollRef }: { scrollRef: React.MutableRefObject<number> }) {
 }
 
 /* 🌙 Aquarius constellation — subtle, elegant */
-function Aquarius({ scrollRef }: { scrollRef: React.MutableRefObject<number> }) {
+function Aquarius({ scrollRef, isMobile }: { scrollRef: React.MutableRefObject<number>; isMobile: boolean }) {
   const groupRef = useRef<THREE.Group>(null);
   const starTex = useMemo(() => makeStarTexture(), []);
 
@@ -275,7 +288,7 @@ function Aquarius({ scrollRef }: { scrollRef: React.MutableRefObject<number> }) 
       "88aqr": [3.8, -1.9],
     };
     const depth = -4;
-    const scale = 1.15;
+    const scale = isMobile ? 0.72 : 1.15;
     const offsetY = 0.4;
     const nodes: Record<string, THREE.Vector3> = {};
     Object.entries(raw).forEach(([k, [x, y]]) => {
@@ -315,18 +328,33 @@ function Aquarius({ scrollRef }: { scrollRef: React.MutableRefObject<number> }) 
     );
 
     return { nodes, lineGeometry, starGeometry };
-  }, []);
+  }, [isMobile]);
 
   const lineRef = useRef<THREE.LineSegments>(null);
   const pointsRef = useRef<THREE.Points>(null);
+
+  const basePosition = {
+    x: isMobile ? -0.3 : -5.5,
+    y: isMobile ? 1.2 : -2.8,
+    z: -4,
+  };
 
   useFrame((state) => {
     if (!groupRef.current) return;
     const s = scrollRef.current;
     const t = state.clock.elapsedTime;
     groupRef.current.rotation.z = Math.sin(t * 0.08) * 0.02;
-    groupRef.current.position.y = -s * 0.9 + Math.sin(t * 0.12) * 0.05;
-    groupRef.current.position.x = Math.cos(t * 0.09) * 0.06;
+    const pulse = 1 + Math.sin(t * 0.42) * 0.035;
+
+    groupRef.current.scale.lerp(
+      new THREE.Vector3(pulse, pulse, pulse),
+      0.03,
+    );
+
+    groupRef.current.position.y = basePosition.y - s * 0.9 + Math.sin(t * 0.12) * 0.05;
+    groupRef.current.position.x = basePosition.x + Math.cos(t * 0.09) * 0.06;
+    groupRef.current.position.z = basePosition.z + Math.sin(t * 0.18) * 0.08;
+
     if (lineRef.current) {
       const m = lineRef.current.material as THREE.LineBasicMaterial;
       m.opacity = 0.28 + Math.sin(t * 0.4) * 0.06;
@@ -346,7 +374,7 @@ function Aquarius({ scrollRef }: { scrollRef: React.MutableRefObject<number> }) 
         <lineBasicMaterial
           color="#a5d8ff"
           transparent
-          opacity={0.3}
+          opacity={0.5}
           blending={THREE.AdditiveBlending}
           depthWrite={false}
         />
@@ -369,18 +397,18 @@ function Aquarius({ scrollRef }: { scrollRef: React.MutableRefObject<number> }) 
 }
 
 /* ☀️ Day — clouds (soft sprites) */
-function Clouds({ scrollRef }: { scrollRef: React.MutableRefObject<number> }) {
+function Clouds({ scrollRef, isMobile }: { scrollRef: React.MutableRefObject<number>; isMobile: boolean }) {
   const groupRef = useRef<THREE.Group>(null);
   const cloudPositions = useMemo(
     () =>
       Array.from({ length: 18 }, (_, i) => ({
-        x: (seededRandom(i * 1.21) - 0.5) * 14,
-        y: (seededRandom(i * 2.11) - 0.5) * 6,
+        x: (seededRandom(i * 1.21) - 0.5) * (isMobile ? 8 : 14),
+        y: (seededRandom(i * 2.11) - 0.5) * (isMobile ? 4 : 6),
         z: -2 - seededRandom(i * 3.17) * 4,
         s: 0.8 + seededRandom(i * 4.31) * 1.6,
         speed: 0.05 + seededRandom(i * 5.73) * 0.08,
       })),
-    [],
+    [isMobile],
   );
   useFrame((state, delta) => {
     if (!groupRef.current) return;
@@ -405,12 +433,16 @@ function Clouds({ scrollRef }: { scrollRef: React.MutableRefObject<number> }) {
 }
 
 /* ☀️ Sun */
-function Sun({ scrollRef }: { scrollRef: React.MutableRefObject<number> }) {
+function Sun({ scrollRef, isMobile }: { scrollRef: React.MutableRefObject<number>; isMobile: boolean }) {
   const ref = useRef<THREE.Mesh>(null);
   useFrame((state) => {
     if (!ref.current) return;
     const s = scrollRef.current;
-    ref.current.position.set(3.5, 1.6 - s * 3, -3);
+    ref.current.position.set(
+      isMobile ? 2.1 : 3.5,
+      1.6 - s * 3,
+      -3,
+    );
     const pulse = 1 + Math.sin(state.clock.elapsedTime * 1.5) * 0.04;
     ref.current.scale.setScalar(pulse);
   });
@@ -425,18 +457,19 @@ function Sun({ scrollRef }: { scrollRef: React.MutableRefObject<number> }) {
 function SceneContent() {
   const { resolvedTheme } = useTheme();
   const scrollRef = useScrollRef();
+  const isMobile = useIsMobile();
   const isDark = resolvedTheme === "dark";
 
   return isDark ? (
     <>
       <Stars scrollRef={scrollRef} />
-      <Aquarius scrollRef={scrollRef} />
-      <Moon scrollRef={scrollRef} />
+      <Aquarius scrollRef={scrollRef} isMobile={isMobile} />
+      <Moon scrollRef={scrollRef} isMobile={isMobile} />
     </>
   ) : (
     <>
-      <Clouds scrollRef={scrollRef} />
-      <Sun scrollRef={scrollRef} />
+      <Clouds scrollRef={scrollRef} isMobile={isMobile} />
+      <Sun scrollRef={scrollRef} isMobile={isMobile} />
     </>
   );
 }
@@ -446,7 +479,10 @@ export function SceneBackground() {
     <div className="fixed inset-0 -z-10 pointer-events-none">
       <div className="absolute inset-0 gradient-sky" />
       <Canvas
-        camera={{ position: [0, 0, 6], fov: 60 }}
+        camera={{
+          position: [0, 0, window.innerWidth < 768 ? 7.5 : 6],
+          fov: window.innerWidth < 768 ? 72 : 60,
+        }}
         dpr={[1, 1.5]}
         gl={{ antialias: true, alpha: true, powerPreference: "high-performance" }}
       >

@@ -10,8 +10,8 @@ export const en = {
   },
   hero: {
     greeting: "Hi, I'm",
-    name: "Rafi Pratama",
-    role: "Software Engineer · Laravel & React Developer",
+    name: "Rafi Islami Pasha",
+    role: "Software Engineer · Full Stack Web Developer",
     tagline:
       "Crafting performant, elegant web experiences from idea to deployment.",
     viewProjects: "View Projects",

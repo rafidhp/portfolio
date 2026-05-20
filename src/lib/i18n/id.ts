@@ -12,8 +12,8 @@ export const id: Translation = {
   },
   hero: {
     greeting: "Halo, saya",
-    name: "Rafi Pratama",
-    role: "Software Engineer · Developer Laravel & React",
+    name: "Rafi Islami Pasha",
+    role: "Software Engineer · Full Stack Web Developer",
     tagline:
       "Membangun pengalaman web yang elegan dan performan, dari ide hingga rilis.",
     viewProjects: "Lihat Proyek",

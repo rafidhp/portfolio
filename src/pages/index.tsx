@@ -1,5 +1,6 @@
 import { Navbar } from "@/components/navbar";
 import { HeroSection } from "@/components/portfolio/hero-section";
+import ScrollNav from "@/components/scroll-nav";
 import { Suspense, lazy } from "react";
 
 const SceneBackground = lazy(() =>
@@ -15,6 +16,7 @@ export default function Index() {
         <SceneBackground />
       </Suspense>
       <Navbar />
+      <ScrollNav />
       <main>
         <HeroSection />
       </main>

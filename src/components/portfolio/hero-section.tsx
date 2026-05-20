@@ -14,14 +14,14 @@ export function HeroSection() {
   return (
     <section
       id="home"
-      className="relative min-h-[88vh] flex items-center justify-center pt-28 pb-16"
+      className="relative min-h-screen flex items-center justify-center py-16 px-4 md:px-12"
     >
       <div className="container max-w-5xl text-center">
         <motion.p
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="inline-block px-4 py-1.5 rounded-full glass text-xs font-medium tracking-wider uppercase text-muted-foreground mb-6"
+          className="inline-block px-4 py-1.5 rounded-full glass text-xs md:text-sm font-medium tracking-wider uppercase text-muted-foreground mb-6"
         >
           ✦ {t("hero.greeting")}
         </motion.p>
@@ -53,23 +53,23 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.35 }}
-          className="flex flex-col sm:flex-row gap-3 justify-center"
+          className="flex flex-col sm:flex-row gap-6 justify-center"
         >
           <Button
             size="lg"
-            className="gradient-primary text-primary-foreground shadow-elegant hover:shadow-glow hover:scale-105 transition-smooth border-0"
+            className="px-6 py-6 gradient-primary text-primary-foreground shadow-elegant hover:shadow-glow md:hover:-translate-y-0.5 transition-all duration-300 border-0 group hover:cursor-pointer"
           >
-            <a href="#projects">
-              {t("hero.viewProjects")} <ArrowRight className="ml-1 h-4 w-4" />
+            <a href="#projects" className="flex items-center justify-center text-base gap-1.5">
+              {t("hero.viewProjects")} <ArrowRight className="h-5 w-5 shrink-0 transition-all duration-300 group-hover:translate-x-1" />
             </a>
           </Button>
           <Button
             size="lg"
             variant="outline"
-            className="glass hover:bg-primary/10 hover:border-primary transition-smooth"
+            className="px-6 py-6 glass text-white hover:bg-primary/10 hover:border-primary hover:cursor-pointer md:hover:-translate-y-0.5 transition-all duration-300 transition-smooth"
           >
-            <a href="#contact">
-              <Mail className="mr-1 h-4 w-4" /> {t("hero.contactMe")}
+            <a href="#contact" className="flex justify-center items-center text-base gap-1.5">
+              <Mail className="mr-1 h-5 w-5 shrink-0" /> {t("hero.contactMe")}
             </a>
           </Button>
         </motion.div>
@@ -79,10 +79,10 @@ export function HeroSection() {
           onClick={scrollNext}
           aria-label={t("hero.scroll")}
           tabIndex={-1}
-          className="hidden md:flex float-soft absolute bottom-10 left-1/2 flex-col items-center gap-2 text-muted-foreground/80 hover:text-foreground hover:drop-shadow-[0_0_12px_hsl(var(--primary-glow)/0.55)] select-none outline-none focus:outline-none focus-visible:outline-none focus:ring-0 active:scale-100 active:bg-transparent bg-transparent border-0 p-2 [-webkit-tap-highlight-color:transparent]"
+          className="flex float-soft absolute bottom-10 left-1/2 flex-col items-center gap-2 text-muted-foreground/80 hover:text-foreground hover:drop-shadow-[0_0_12px_hsl(var(--primary-glow)/0.55)] select-none outline-none focus:outline-none focus-visible:outline-none focus:ring-0 active:scale-100 active:bg-transparent bg-transparent border-0 p-2 [-webkit-tap-highlight-color:transparent]"
           style={{ transition: "color 0.2s ease" }}
         >
-          <span className="text-[11px] uppercase tracking-[0.2em]">
+          <span className="text-[10px] md:text-[11px] uppercase tracking-[0.2em]">
             {t("hero.scroll")}
           </span>
           <span className="w-[1px] h-6 bg-gradient-to-b from-foreground/40 to-transparent" />
