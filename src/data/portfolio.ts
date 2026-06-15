@@ -1,3 +1,8 @@
+import KhaslanaImage from "@/assets/projects/khaslana.png";
+import SmartGarden from "@/assets/projects/smart-garden-1.png";
+import ApiHimarpl from "@/assets/projects/api-himarpl.png";
+import Sihuma from "@/assets/projects/sikawan.png";
+
 export type Project = {
   id: string;
   name: string;
@@ -31,86 +36,100 @@ export type Achievement = {
 
 export const skills = {
   languages: [
-    { name: "PHP", level: 92 },
+    { name: "PHP", level: 95 },
     { name: "JavaScript", level: 90 },
-    { name: "TypeScript", level: 85 },
+    { name: "TypeScript", level: 90 },
+    { name: "SQL", level: 85 },
     { name: "C++", level: 75 },
-    { name: "SQL", level: 80 },
   ],
   frameworks: [
-    { name: "Laravel", level: 92 },
-    { name: "React", level: 90 },
+    { name: "Laravel", level: 97 },
+    { name: "React", level: 92 },
     { name: "Next.js", level: 80 },
-    { name: "Tailwind CSS", level: 95 },
-    { name: "Inertia.js", level: 78 },
+    { name: "Tailwind CSS", level: 92 },
+    { name: "Inertia.js", level: 88 },
+  ],
+  devops: [
+    { name: "Docker", level: 80 },
+    { name: "Railway", level: 92 },
+    { name: "AWS Lightsail", level: 70 },
+    { name: "Apache", level: 80 },
+    { name: "Linux", level: 85 },
   ],
   tools: [
     { name: "Git", level: 92 },
-    { name: "Docker", level: 78 },
-    { name: "AWS", level: 70 },
-    { name: "Railway", level: 82 },
-    { name: "Figma", level: 75 },
+    { name: "GitHub", level: 92 },
+    { name: "Postman", level: 90 },
+    { name: "Figma", level: 78 },
+  ],
+  databases: [
+    { name: "MySQL", level: 90 },
+    { name: "SQLite", level: 87 },
+    { name: "Redis", level: 75 },
+  ],
+  integrations: [
+    { name: "Midtrans", level: 85 },
+    { name: "Cloud Storage", level: 80 },
+    { name: "Third-Party APIs", level: 88 },
+    { name: "Google OAuth", level: 90 },
   ],
 };
 
 export const projects: Project[] = [
   {
     id: "p1",
-    name: "LaraCommerce",
+    name: "Khaslana",
     descriptionEn:
-      "A multi-vendor e-commerce platform with real-time order tracking, Stripe checkout and an admin analytics dashboard.",
+      "A marketplace platform for local MSMEs featuring Stay Point, a real-time location tracking system that allows customers to find and monitor mobile merchants nearby. The platform also includes online ordering, digital payments, merchant management, AI assistance, and interactive maps.",
     descriptionId:
-      "Platform e-commerce multi-vendor dengan pelacakan pesanan real-time, pembayaran Stripe dan dasbor analitik admin.",
-    roleEn: "Lead Full-stack Developer",
-    roleId: "Lead Developer Full-stack",
-    stack: ["Laravel", "React", "MySQL", "Stripe", "Docker"],
-    image:
-      "https://images.unsplash.com/photo-1556742044-3c52d6e88c62?w=1200&q=80",
-    github: "https://github.com",
-    demo: "https://example.com",
+      "Platform marketplace untuk UMKM lokal dengan fitur unggulan Stay Point, sistem pelacakan lokasi real-time yang memungkinkan pelanggan menemukan dan memantau keberadaan pedagang keliling di sekitar mereka. Dilengkapi dengan pemesanan online, pembayaran digital, manajemen toko, asisten AI, dan peta interaktif.",
+    roleEn: "Project Manager, Lead and Full-stack Developer",
+    roleId: "Manajer Proyek, Pemimpin dan Developer Full-stack",
+    stack: ["Laravel", "React", "Inertia JS", "Tailwindcss", "Shadcn", "MySQL", "Docker", "Leaflet", "Open Street Map", "Midtrans", "Framer Motion", "Gemini API", "Google OAuth", "Railway", "ReChart"],
+    image: KhaslanaImage,
+    github: "https://github.com/rafidhp/khaslana",
+    demo: "https://khaslana.up.railway.app",
   },
   {
     id: "p2",
-    name: "StudyFlow",
+    name: "Smart Garden",
     descriptionEn:
-      "A focus & task app for students with Pomodoro, spaced-repetition flashcards and weekly progress insights.",
+      "An IoT-powered smart hydroponics system integrated with a web platform for real-time monitoring and environmental control. The system helps users grow plants more efficiently through automated tracking of temperature, humidity, lighting, and other key growing conditions, enabling sustainable and space-efficient urban farming.",
     descriptionId:
-      "Aplikasi fokus & tugas untuk pelajar dengan Pomodoro, flashcard spaced-repetition dan ringkasan progres mingguan.",
-    roleEn: "Solo Developer & Designer",
-    roleId: "Developer & Desainer Tunggal",
-    stack: ["React", "TypeScript", "Tailwind", "Vite"],
-    image:
-      "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=1200&q=80",
-    github: "https://github.com",
-    demo: "https://example.com",
+      "Sistem hidroponik pintar berbasis IoT yang terintegrasi dengan platform web untuk monitoring dan pengendalian lingkungan secara real-time. Sistem ini membantu pengguna membudidayakan tanaman dengan lebih efisien melalui pemantauan otomatis suhu, kelembapan, pencahayaan, dan berbagai parameter penting lainnya, sehingga mendukung pertanian modern yang berkelanjutan dan hemat ruang.",
+    roleEn: "Lead and Full-Stack Web Developer",
+    roleId: "Ketua dan Developer Web Full-Stack",
+    stack: ["Laravel", "IoT Integration", "Bootstrap", "Plotly JS", "JQuery", "Blade", "Eloquent ORM", "MySQL"],
+    image: SmartGarden,
+    github: "https://github.com/rafidhp/smart_garden",
+    // demo: "https://example.com",
   },
   {
     id: "p3",
-    name: "DevPulse API",
+    name: "HIMARPL API",
     descriptionEn:
-      "REST + WebSocket API powering a developer activity dashboard with GitHub & GitLab webhooks.",
+      "A centralized backend API powering the HIMARPL website ecosystem. Built to manage organizational data, member information, news, events, and other digital services while providing secure, scalable, and well-documented endpoints.",
     descriptionId:
-      "API REST + WebSocket yang memberdayakan dasbor aktivitas developer dengan webhook GitHub & GitLab.",
-    roleEn: "Backend Engineer",
-    roleId: "Backend Engineer",
-    stack: ["Laravel", "Redis", "PostgreSQL", "Docker"],
-    image:
-      "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1200&q=80",
-    github: "https://github.com",
+      "API backend terpusat yang mendukung ekosistem website HIMARPL. Dikembangkan untuk mengelola data organisasi, informasi anggota, berita, kegiatan, dan berbagai layanan digital lainnya melalui endpoint yang aman, terstruktur, dan mudah dikembangkan.",
+    roleEn: "Backend Developer",
+    roleId: "Backend Developer",
+    stack: ["Next JS", "Drizzle ORM", "Swagger", "Github Actions", "Vercel", "Turso Database", "Redis", "tRPC"],
+    image: ApiHimarpl,
+    github: "https://github.com/himarplupi/api-himarpl",
+    demo: "https://api.himarpl.org",
   },
   {
     id: "p4",
-    name: "Campus Portal",
+    name: "SIHUMA",
     descriptionEn:
-      "Internal academic portal serving 5k+ students with role-based access and live class schedules.",
+      "A digital housing information system designed to support sustainable residential and settlement management. The platform centralizes area data, enabling government agencies and communities to access accurate information for planning, monitoring, and improving livable neighborhoods.",
     descriptionId:
-      "Portal akademik internal yang melayani 5k+ mahasiswa dengan akses berbasis peran dan jadwal kuliah real-time.",
-    roleEn: "Full-stack Developer",
-    roleId: "Developer Full-stack",
-    stack: ["Laravel", "Inertia", "Vue", "MySQL"],
-    image:
-      "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1200&q=80",
-    demo: "https://example.com",
+      "Sistem informasi hunian berbasis digital yang dirancang untuk mendukung pengelolaan kawasan perumahan dan permukiman secara berkelanjutan. Platform ini mengintegrasikan data kawasan sehingga instansi pemerintah dan masyarakat dapat mengakses informasi yang akurat untuk perencanaan, pemantauan, dan peningkatan kualitas lingkungan hunian.",
+    roleEn: "Junior Full-stack Developer",
+    roleId: "Developer Full-stack Junior",
+    stack: ["Laravel", "Inertia JS", "React", "SQLite", "Docker", "Leaflet", "Carto", "Open Street Map", "Tailwindcss", "Shadcn",],
+    image: Sihuma,
+    demo: "https://sihuma.muaraenim.site/",
   },
 ];
 

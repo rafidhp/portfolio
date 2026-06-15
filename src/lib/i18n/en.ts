@@ -20,10 +20,10 @@ export const en = {
   },
   about: {
     title: "About Me",
-    eyebrow: "Who I am",
-    p1: "I'm a Software Engineering (RPL) student passionate about building reliable, beautiful products on the web.",
-    p2: "I focus on full-stack development with a strong leaning toward backend architecture, clean APIs, and developer experience.",
-    p3: "I value craftsmanship, clarity, and shipping things that actually work — fast iterations with attention to detail.",
+    eyebrow: "Software Engineer & Problem Solver",
+    p1: "I'm a Software Engineering student with hands-on experience building full-stack web applications using Laravel, React, TypeScript, and modern cloud technologies. I enjoy transforming complex requirements into reliable, scalable, and user-focused digital solutions.",
+    p2: "Throughout my projects, I've worked across the entire development lifecycle, from database design and backend architecture to frontend implementation, API integration, deployment, and system optimization. My strongest interest lies in backend engineering and software architecture.",
+    p3: "I am driven by continuous learning, clean code, and delivering measurable results. Whether working independently or as part of a team, I aim to build products that are not only functional, but also maintainable, efficient, and ready for real-world use.",
     stats: {
       years: "Years coding",
       projects: "Projects built",
@@ -35,7 +35,10 @@ export const en = {
     eyebrow: "What I work with",
     languages: "Languages",
     frameworks: "Frameworks & Libraries",
+    devops: "Devops",
     tools: "Tools & Platforms",
+    databases: "Databases",
+    integrations: "Third Party Integrations",
   },
   projects: {
     title: "Selected Projects",

@@ -22,10 +22,10 @@ export const id: Translation = {
   },
   about: {
     title: "Tentang Saya",
-    eyebrow: "Siapa saya",
-    p1: "Saya mahasiswa Rekayasa Perangkat Lunak (RPL) yang antusias membangun produk web yang andal dan rapi.",
-    p2: "Fokus saya adalah pengembangan full-stack dengan kecondongan pada arsitektur backend, API yang bersih, dan developer experience.",
-    p3: "Saya menghargai craftsmanship, kejelasan, dan pengiriman karya yang benar-benar berfungsi — iterasi cepat dengan perhatian pada detail.",
+    eyebrow: "Software Engineer & Problem Solver",
+    p1: "Saya adalah mahasiswa Rekayasa Perangkat Lunak (RPL) yang memiliki pengalaman dalam mengembangkan aplikasi web full-stack menggunakan Laravel, React, TypeScript, serta berbagai teknologi cloud modern. Saya senang mengubah kebutuhan yang kompleks menjadi solusi digital yang andal, skalabel, dan berorientasi pada pengguna.",
+    p2: "Melalui berbagai proyek yang saya kerjakan, saya terlibat dalam seluruh siklus pengembangan perangkat lunak, mulai dari perancangan basis data dan arsitektur backend hingga implementasi frontend, integrasi API, deployment, dan optimasi sistem. Bidang yang paling saya minati adalah backend engineering dan software architecture.",
+    p3: "Saya memiliki semangat untuk terus belajar, menulis kode yang bersih, dan menghasilkan solusi yang memberikan dampak nyata. Baik bekerja secara mandiri maupun dalam tim, saya selalu berusaha membangun produk yang tidak hanya berfungsi dengan baik, tetapi juga mudah dikembangkan, efisien, dan siap digunakan dalam lingkungan nyata.",
     stats: {
       years: "Tahun ngoding",
       projects: "Proyek dibangun",
@@ -37,7 +37,10 @@ export const id: Translation = {
     eyebrow: "Yang saya gunakan",
     languages: "Bahasa Pemrograman",
     frameworks: "Framework & Library",
+    devops: "Devops",
     tools: "Tools & Platform",
+    databases: "Basis Data",
+    integrations: "Integrasi Eksternal",
   },
   projects: {
     title: "Proyek Pilihan",

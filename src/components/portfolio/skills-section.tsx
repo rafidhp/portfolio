@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import SectionHeading from "./section-heading";
 import { Card } from "@/components/ui/card";
-import { Code2, Layers, Wrench } from "lucide-react";
+import { Code2, Layers, Wrench, Database, ServerCog, Workflow } from "lucide-react";
 import { skills } from "@/data/portfolio";
 
 export default function SkillsSection() {
@@ -10,7 +10,10 @@ export default function SkillsSection() {
   const groups = [
     { key: "languages", icon: Code2, items: skills.languages },
     { key: "frameworks", icon: Layers, items: skills.frameworks },
+    { key: "devops", icon: ServerCog, items: skills.devops },
     { key: "tools", icon: Wrench, items: skills.tools },
+    { key: "databases", icon: Database, items: skills.databases },
+    { key: "integrations", icon: Workflow, items: skills.integrations },
   ] as const;
 
   return (

@@ -8,8 +8,7 @@ export function HeroSection() {
   const scrollNext = () => {
     const el = document.getElementById("about");
     if (!el) return;
-    const y = el.getBoundingClientRect().top + window.scrollY;
-    window.scrollTo({ top: y, behavior: "smooth" });
+    document.getElementById("about")?.scrollIntoView({ behavior: "smooth" });
   };
   
   return (
@@ -54,7 +53,7 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.35 }}
-          className="flex flex-col sm:flex-row gap-6 justify-center"
+          className="flex flex-col sm:flex-row gap-6 justify-center mt-18"
         >
           <Button
             size="lg"

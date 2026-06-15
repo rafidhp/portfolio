@@ -6,9 +6,9 @@ import { Card } from "@/components/ui/card";
 export default function AboutSection() {
   const { t } = useTranslation();
   const stats = [
-    { value: "3+", label: t("about.stats.years") },
-    { value: "12+", label: t("about.stats.projects") },
-    { value: "15+", label: t("about.stats.stack") },
+    { value: "5+", label: t("about.stats.years") },
+    { value: "20+", label: t("about.stats.projects") },
+    { value: "35+", label: t("about.stats.stack") },
   ];
   
   return (
