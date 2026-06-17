@@ -410,7 +410,7 @@ function Clouds({ scrollRef, isMobile }: { scrollRef: React.MutableRefObject<num
       })),
     [isMobile],
   );
-  useFrame((state, delta) => {
+  useFrame((_, delta) => {
     if (!groupRef.current) return;
     const s = scrollRef.current;
     groupRef.current.children.forEach((c, i) => {
