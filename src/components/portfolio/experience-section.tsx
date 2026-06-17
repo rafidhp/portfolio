@@ -30,13 +30,13 @@ export default function ExperienceSection() {
                 </div>
                 <Card className="p-6 glass hover:shadow-elegant transition-smooth">
                   <div className="flex flex-wrap justify-between gap-2 mb-1">
-                    <h3 className="font-semibold text-lg">
+                    <h3 className="font-semibold text-lg md:text-xl">
                       {lang === "id" ? e.roleId : e.roleEn}
                     </h3>
-                    <span className="text-xs text-muted-foreground font-medium">{e.period}</span>
+                    <span className="text-xs md:text-sm text-muted-foreground font-medium">{e.period}</span>
                   </div>
-                  <p className="text-sm text-primary mb-4">{e.org}</p>
-                  <ul className="space-y-2 text-sm text-muted-foreground">
+                  <p className="text-sm md:text-base text-primary mb-4">{e.org}</p>
+                  <ul className="space-y-2 text-sm md:text-base text-muted-foreground">
                     {(lang === "id" ? e.bulletsId : e.bulletsEn).map((b, j) => (
                       <li key={j} className="flex items-center gap-2">
                         <span className="text-primary mt-1.5 shrink-0">

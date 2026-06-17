@@ -127,7 +127,7 @@ export function Navbar() {
             size="icon-lg"
             aria-label={t("theme.toggle")}
             onClick={toggleTheme}
-            className="rounded-full h-10 w-10 relative overflow-hidden hover:cursor-pointer"
+            className="hidden rounded-full h-10 w-10 relative overflow-hidden hover:cursor-pointer"
           >
             <div className="relative flex items-center justify-center">
               {resolvedTheme === "dark" ? (
