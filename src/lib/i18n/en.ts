@@ -64,7 +64,7 @@ export const en = {
     email: "Email",
     message: "Message",
     send: "Send message",
-    sent: "Opening your email client…",
+    sent: "Email sent successfully!",
     downloadCv: "Download CV",
   },
   footer: {

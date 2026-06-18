@@ -66,7 +66,7 @@ export const id: Translation = {
     email: "Email",
     message: "Pesan",
     send: "Kirim pesan",
-    sent: "Membuka aplikasi email…",
+    sent: "Email berhasil dikirim!",
     downloadCv: "Unduh CV",
   },
   footer: {

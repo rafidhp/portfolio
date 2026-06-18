@@ -91,7 +91,7 @@ export default function ContactSection() {
               </a>
             </div>
             <Button variant="outline" className="mt-auto glass hover:bg-primary/10 hover:border-primary transition-all duration-300">
-              <a href="/cv.pdf" className="flex gap-1 justify-center items-center hover:cursor-pointer w-full" download>
+              <a href="/CV_RAFI.pdf" className="flex gap-1 justify-center items-center hover:cursor-pointer w-full" download>
                 <Download className="mr-2 h-4 w-4" />
                 {t("contact.downloadCv")}
               </a>

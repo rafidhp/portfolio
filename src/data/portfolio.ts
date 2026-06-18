@@ -66,7 +66,8 @@ export const skills = {
   databases: [
     { name: "MySQL", level: 90 },
     { name: "SQLite", level: 87 },
-    { name: "Redis", level: 75 },
+    { name: "Redis", level: 79 },
+    { name: "Turso Database", level: 85 },
   ],
   integrations: [
     { name: "Midtrans", level: 85 },
@@ -156,6 +157,44 @@ export const experiences: Experience[] = [
   },
   {
     id: "e2",
+    org: "Freelance",
+    roleEn: "SIHUMA - Junior Full-Stack Developer",
+    roleId: "SIHUMA - Junior Full-Stack Developer",
+    period: "2025",
+    bulletsEn: [
+      "Developed a role and permission management system that allows Super Admins to create custom roles and configure access rights for different user groups.",
+      "Built an administrative dashboard to monitor and manage key data and operational activities across the SIHUMA platform.",
+      "Implemented an aspiration management feature that enables residents to submit feedback, complaints, and suggestions directly to administrators.",
+      "Developed a reporting module that provides insights into housing growth, housing eligibility status, population composition, and public infrastructure (PSU), with filtering and report generation capabilities."
+    ],
+    bulletsId: [
+      "Mengembangkan sistem manajemen role dan hak akses yang memungkinkan Super Admin membuat peran baru serta mengatur izin akses sesuai kebutuhan pengguna.",
+      "Membangun dashboard administrasi untuk memantau dan mengelola data serta aktivitas utama pada platform SIHUMA.",
+      "Mengimplementasikan fitur aspirasi masyarakat yang memungkinkan penghuni perumahan menyampaikan masukan, keluhan, dan saran secara langsung kepada administrator.",
+      "Mengembangkan modul pelaporan yang menyajikan informasi mengenai pertumbuhan rumah, status kelayakan hunian, komposisi penduduk, serta jumlah PSU, lengkap dengan fitur filter data dan generate laporan."
+    ],
+  },
+  {
+    id: "e3",
+    org: "Freelance",
+    roleEn: "Trash Sorting Game - Full-Stack Developer",
+    roleId: "Trash Sorting Game - Full-Stack Developer",
+    period: "2025",
+    bulletsEn: [
+      "Developed an educational game using Scratch to teach elementary school students how to classify organic and inorganic waste through interactive gameplay.",
+      "Designed the game flow, including character navigation, waste discovery events, and decision-making mechanics for selecting the appropriate waste bin.",
+      "Implemented a scoring system that rewards correct waste classification and provides feedback to reinforce learning outcomes.",
+      "Built game progression and completion mechanics, including achievement targets, score tracking, and end-game result summaries."
+    ],
+    bulletsId: [
+      "Mengembangkan game edukasi menggunakan Scratch untuk membantu siswa sekolah dasar memahami cara memilah sampah organik dan non-organik melalui permainan interaktif.",
+      "Merancang alur permainan yang mencakup pergerakan karakter, penemuan sampah di sepanjang perjalanan, serta mekanisme pemilihan jenis tempat sampah yang sesuai.",
+      "Mengimplementasikan sistem penilaian yang memberikan poin untuk klasifikasi sampah yang benar sebagai bentuk penguatan proses pembelajaran.",
+      "Membangun mekanisme progres permainan dan penyelesaian game, termasuk target pencapaian, perhitungan skor, dan tampilan hasil akhir permainan."
+    ],
+  },
+  {
+    id: "e4",
     org: "HIMARPL",
     roleEn: "Staff of KOMINFO Department",
     roleId: "Staff Departemen KOMINFO",
@@ -174,7 +213,7 @@ export const experiences: Experience[] = [
     ],
   },
   {
-    id: "e3",
+    id: "e5",
     org: "Indonesia University of Education",
     roleEn: "Staff of Media Visual - Dies Natalis",
     roleId: "Staff Media Visual - Dies Natalis",
@@ -191,7 +230,7 @@ export const experiences: Experience[] = [
     ],
   },
   {
-    id: "e4",
+    id: "e6",
     org: "Indonesia University of Education",
     roleEn: "Staff of Media Visual and Operator - RPL Goes To School",
     roleId: "Staff Media Visual dan Operator - RPL Goes To School",
@@ -210,7 +249,7 @@ export const experiences: Experience[] = [
     ],
   },
   {
-    id: "e5",
+    id: "e7",
     org: "Indonesia University of Education",
     roleEn: "Staff of Media Visual - MABIM RPL",
     roleId: "Staff Media Visual - MABIM RPL",
@@ -229,7 +268,24 @@ export const experiences: Experience[] = [
     ],
   },
   {
-    id: "e6",
+    id: "e8",
+    org: "CV SmartPlus",
+    roleEn: "Full-Stack Web Developer",
+    roleId: "Full-Stack Web Developer",
+    period: "2023",
+    bulletsEn: [
+      "Developed and maintained web applications using Laravel and PHP.",
+      "Designed and optimized relational databases to support business operations.",
+      "Applied Git-based version control and clean code practices in collaborative development.",
+    ],
+    bulletsId: [
+      "Mengembangkan fitur aplikasi web berbasis Laravel dan PHP untuk mendukung kebutuhan operasional perusahaan.",
+      "Merancang, mengelola, dan mengoptimalkan database relasional guna memastikan performa dan konsistensi data.",
+      "Menerapkan praktik pengembangan perangkat lunak yang baik melalui Git, clean code, dan kolaborasi tim.",
+    ],
+  },
+  {
+    id: "e9",
     org: "PT Logisklik Gemilang Indonesia",
     roleEn: "Quality Assurance",
     roleId: "Quality Assurance",
