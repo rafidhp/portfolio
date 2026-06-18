@@ -100,7 +100,7 @@ export default function ContactSection() {
 
           <Card className="md:col-span-3 p-6 glass flex flex-col">
             <form onSubmit={onSubmit} className="flex flex-col flex-1">
-              <div className="space-y-4 flex-1">
+              <div className="space-y-4 flex-1 mb-4">
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div className="space-y-1.5">
                     <Label htmlFor="name">{t("contact.name")}</Label>
